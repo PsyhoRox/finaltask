@@ -102,4 +102,6 @@ module.exports = {
       overlay: true // Show errors and warnings in the browser
     }
   },
+
 };
+
