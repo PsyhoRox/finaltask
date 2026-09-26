@@ -156,7 +156,28 @@ body  {
         }
     }
 }
+// Подвал
 
+.footer {
+    display: flex;
+    background-color: $bg-color;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    margin-bottom: 16px;
+    &__text {
+        font-size: 14px;
+        color: $gray;
+    }   
+    &__link {
+        color: inherit;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+    }
+    }
+}
 // Menu
 
 .menu {

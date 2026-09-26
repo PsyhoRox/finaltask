@@ -1,43 +1,67 @@
 import '../scss/style.scss'
 import Swiper from 'swiper/bundle';
 
-let brandSwiper = null;
+let swiperInstances = [];
 let resizeTimer = null;
 
-function initSwiper() {
+function initSwipers() {
   const screenWidth = window.innerWidth;
-  const sliderEl = document.querySelector('.slide__list');
-
-  if (!sliderEl) {
-    return;
-  }
+  const sliderContainers = document.querySelectorAll('.slide__list.swiper');
 
   if (screenWidth < 768) {
-    if (!brandSwiper) {
-      brandSwiper = new Swiper(sliderEl, {
-        slidesPerView: 1.25,
-        spaceBetween: 16,
-        watchSlidesProgress: true,
+    if (swiperInstances.length === 0) {
+      sliderContainers.forEach((sliderEl) => {
+        const paginationEl = sliderEl.querySelector('.swiper-pagination');
+        
+        const instance = new Swiper(sliderEl, {
+          slidesPerView: 'auto',
+          spaceBetween: 0,
+          watchSlidesProgress: true,
+          pagination: {
+            el: paginationEl,
+            clickable: true,
+          },
+        });
 
-        pagination: {
-          el: sliderEl.querySelector('.swiper-pagination'),
-          clickable: true,
-        },
+        swiperInstances.push(instance);
       });
     }
   } else {
-    if (brandSwiper) {
-      brandSwiper.destroy(true, true);
-      brandSwiper = null;
+    if (swiperInstances.length > 0) {
+      swiperInstances.forEach((instance) => instance.destroy(true, true));
+      swiperInstances = [];
     }
   }
 }
 
-document.addEventListener('DOMContentLoaded', initSwiper);
+document.addEventListener('DOMContentLoaded', () => {
+  initSwipers();
+
+  const expandButtons = document.querySelectorAll('.expand__btn');
+
+  expandButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const parentSection = btn.closest('.services__slide') || btn.parentElement;
+      const slideList = btn.previousElementSibling;
+      const btnText = btn.querySelector('.expand__btn-text');
+
+      if (slideList && slideList.classList.contains('slide__list')) {
+        slideList.classList.toggle('expanded');
+        btn.classList.toggle('expand__btn--active');
+
+        if (slideList.classList.contains('expanded')) {
+          btnText.textContent = 'Скрыть';
+        } else {
+          btnText.textContent = 'Показать все';
+        }
+      }
+    });
+  });
+});
 
 window.addEventListener('resize', () => {
   clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(initSwiper, 200);
+  resizeTimer = setTimeout(initSwipers, 200);
 });
 
 const expandBtn = document.querySelector('.expand__btn');

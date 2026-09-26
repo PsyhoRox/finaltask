@@ -7,9 +7,9 @@
         min-width: 300px;
         max-width: 1120px;
         position: relative;
-        min-height: 234px;
+        min-height: 196px;
         flex-direction: column;
-        background-color: #f8f8f8;
+        background-color: $bg-color;
     }
 
     &__header {
@@ -18,25 +18,25 @@
 
         &-text {
             display: block;
-            color: #7e7e82;
+            color: $gray;
             position: relative;
             font-size: 16px;
             text-transform: uppercase;
         }
     }
 }
+// Слайды 
 .slide {
     &__list {
         display: flex;
         width: 100%;;
         position: relative;
         margin-left: 16px;
-        
         .swiper-slide-next {
             opacity: 0.5;
             transition: opacity 0.3s ease;
         }
-
+// разное ремонты
         &-others {
             &.swiper-slide {
                 display: flex;
@@ -47,15 +47,46 @@
                 height: 160px;
                 margin-left: 16px;
                 background-color: #fff;
+                border: 1px solid #eaeaea;
             }
-
-            // &.slider__list-btns { Я не понял как сделать отдельные свойство внутри slide__list-others
-            //     position: absolute;
-            //     bottom: 0;
-            //     right: 0;
-            // }
         }
+// прайс заказы
+        &-price {
+            &.swiper-slide {
+                display: flex;
+                flex-direction: column;
+                border-radius: 5px;
+                justify-content: center;
+                margin-left: 0;
+                width: 260px;
+                height: 200px;
+                margin-left: 16px;
+                background-color: #fff;
+                border: 1px solid #eaeaea;
+            }
+            .price__card {
+                display: flex;
+                flex-direction: column;
+                box-sizing: border-box;
+                flex-shrink: 0;
+                position: relative;
+                height: auto;
+                font-size: 14px;
+                padding: 16px;
+                justify-content: center;
+                line-height: 14px;
+                &-title {
+                    display: block;
+                    color: #727278;
+                    margin-bottom: 3px;
+                }
 
+                &-text {
+                    display: block;
+                }
+            }
+        }
+// слайды с лого
         &-item {
             &.swiper-slide {
                 display: flex;
@@ -63,10 +94,12 @@
                 align-items: center;
                 background-color: #fff;
                 height: 72px;
+                width: 240px;
                 margin-left: 16px;
                 border-radius: 6px;
                 box-sizing: border-box;
                 padding: 0px 16px;
+                border: 1px solid #eaeaea;
             }
         }
 
@@ -75,7 +108,7 @@
             font-size: 16px;
             margin: 16px;
         }
-
+// кнопки
         &-btns {
             display: flex;
             width: 40px;
@@ -93,6 +126,34 @@
                 height: 8px;
                 border-top: 2px solid $pink;
                 border-right: 2px solid $pink;
+                transform: rotate(45deg);
+                margin-left: -3px;
+            }
+        }
+
+        &-btnsPrice {
+            display: flex;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 120px;
+            height: 32px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            border-radius: 20px;
+            background-color: $pink;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 16px;
+
+            &::after {
+                content: '';
+                width: 8px;
+                height: 8px;
+                border-top: 2px solid #fff;
+                border-right: 2px solid #fff;
                 transform: rotate(45deg);
                 margin-left: -3px;
             }
@@ -123,12 +184,13 @@
         }
 
         .swiper-pagination {
-            position: absolute;
+            position: relative;
             width: 100%;
             display: flex;
             justify-content: center;
             gap: 8px;
-
+            margin-top: 25px;
+            margin-left: auto;
             &-bullet {
                 background: #DDDDDD;
                 opacity: 1;
@@ -147,6 +209,60 @@
         max-width: 120px;
         object-fit: contain;
         object-position: left center;
+    }
+}
+
+// Text в прайсе 
+.price__others {
+    display: flex;
+    padding: 16px;
+    justify-content: flex-start;
+    max-width: 440px;
+    flex-direction: column;
+    
+    &-text {
+        display: block;
+        color: #1b1c21;
+        font-size: 14px;
+    }
+    
+    &-btn {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px;
+        line-height: 30px;
+        border: none;
+        min-width: 192px;
+        max-width: 292px;
+        background: none;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+        &::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-top: 2px solid $pink;
+            border-right: 2px solid $pink;
+            transform: rotate(45deg);
+            margin-left: -3px;
+            
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            filter: brightness(92%);
+
+            &.price__others-btn {
+                filter: drop-shadow(0px 1px 1px #3a3a3a);
+            }
+
+            &::after {
+                transform: scale(1.15) rotate(45deg);
+        }
+        }
     }
 }
 
