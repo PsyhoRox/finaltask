@@ -16,7 +16,8 @@
         <header class="header">
             <div class="header__container">
                 <div class="header__left">
-                    <button class="header__btn header__btn-burger"></button>
+                    <button class="header__btn header__btn-burger" id="burger" aria-label="Открыть меню">
+                    </button>
                     <a href="#" class="header__logo"
                         aria-label="Главная страница"></a>
                     <span class="header__line"></span></div>
@@ -72,7 +73,8 @@
             </nav>
 
             <!--Меню-->
-            <div class="menu">
+            <div class="overlay" id="overlay"></div>
+            <aside class="menu" id="menu">
                 <div class="menu__header">
                     <button class="menu__btn menu__btn-close"></button>
                     <a href="#" class="menu__logo"
@@ -134,19 +136,19 @@
                         <span>CH</span>
                     </button>
                 </div>
-            </div>
+            </aside>
             <!-- Контент -->
             <section class="content">
                 <div class="content__main">
                     <p class="content__text">Мы являемся авторизованным
                         сервисным центром по ремонту техники Dell. Только у нас
                         вы можете отремонтировать свой ноутбук Dell с
-                        официальной гарантией производителя. Мы успешно работаем
+                        официальной гарантией производителя.</p> <p><br>Мы успешно работаем
                         с 1992 года и заслужили репутацию надежного партнера,
                         что подтверждает большое количество постоянных клиентов.
                         Мы гордимся тем, что к нам обращаются по рекомендациям
                         и, в свою очередь, советуют нас родным и близким.</p>
-                    <button class="content__more">Читать далее</button>
+                    <a href="#" class="content__btn"><button class="content__more">Читать далее</button></a>
                 </div>
                 <div class="content__post">
                     <img class="content__post-img" src="img/post1.svg">

@@ -113,7 +113,7 @@ body  {
 
     &__main {
         width: 100%;
-        /* overflow: hidden; */
+        // /* overflow: hidden; */
     }
 
     &__text {
@@ -178,12 +178,6 @@ body  {
     }
     }
 }
-// Menu
-
-.menu {
-    display: none;
-}
-
 // Медиа запросы
 @media (min-width: 768px) and (max-width: 1023px) {
     .slide__list {
@@ -195,6 +189,30 @@ body  {
             display: flex;
         }    
     }
+}
+
+@media (min-width: 1120px) {
+ /* Настройки постоянного меню слева */
+  .menu {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 320px;
+    height: 100vh;
+    transform: translateX(0) !important; /* Меню всегда видно, сдвиг убран */
+    box-shadow: none; /* Убираем тень, если нужно по макету */
+  }
+
+  /* Скрываем кнопку «крестик» внутри меню */
+  .menu__btn-close {
+    display: none;
+  }
+
+  .header,
+  .main-container { // Замените .main-content на ваш класс контейнера контента
+    margin-left: 320px;
+    width: calc(100% - 320px);
+  }
 }
 
 @media (min-width: 768px) {
@@ -262,18 +280,28 @@ body  {
         flex-direction: row;
         padding: 16px;
         align-items: flex-start;
-        gap: 10px;
+        gap: 20px;
 
         &__text {
             padding: 0;
             max-height: 160px;
+            line-height: 20px;
             flex: 1;
         }
 
         &__post-img {
             display: block;
         }
+        &__btn {
+            &:hover,
+            &:focus,
+            &:active {
+                filter: brightness(92%);
+                filter: drop-shadow(0px 1px 1px #3a3a3a);
+            }
+        }
     }
+
 }
 
 @media (min-width: 1024px) {
