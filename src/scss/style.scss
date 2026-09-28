@@ -192,24 +192,22 @@ body  {
 }
 
 @media (min-width: 1120px) {
- /* Настройки постоянного меню слева */
   .menu {
     position: fixed;
     top: 50px;
     left: 0;
     width: 320px;
     height: 100vh;
-    transform: translateX(0) !important; /* Меню всегда видно, сдвиг убран */
-    box-shadow: none; /* Убираем тень, если нужно по макету */
+    transform: translateX(0) !important;
+    box-shadow: none;
   }
 
-  /* Скрываем кнопку «крестик» внутри меню */
   .menu__btn-close {
     display: none;
   }
 
   .header,
-  .main-container { // Замените .main-content на ваш класс контейнера контента
+  .main-container {
     margin-left: 320px;
     width: calc(100% - 320px);
   }
@@ -292,7 +290,9 @@ body  {
         &__post-img {
             display: block;
         }
+
         &__btn {
+            display: inline-block;
             &:hover,
             &:focus,
             &:active {
@@ -301,7 +301,6 @@ body  {
             }
         }
     }
-
 }
 
 @media (min-width: 1024px) {
