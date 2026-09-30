@@ -1,109 +1,96 @@
 import '../scss/style.scss'
 import Swiper from 'swiper/bundle'
-// слайды
-let swiperInstances = []
-let resizeTimer = null
 
+let swipers = []
+let resizeTimer
+
+// Слайдеры: только на мобильных
 function initSwipers() {
-  const screenWidth = window.innerWidth
-  const sliderContainers = document.querySelectorAll('.slide__list.swiper')
+  const isMobile = window.innerWidth < 768
+  const sliders = document.querySelectorAll('.slide__list.swiper')
 
-  if (screenWidth < 768) {
-    if (swiperInstances.length === 0) {
-      sliderContainers.forEach((sliderEl) => {
-        const paginationEl = sliderEl.querySelector('.swiper-pagination')
-
-        const instance = new Swiper(sliderEl, {
+  if (isMobile && !swipers.length) {
+    sliders.forEach((el) => {
+      swipers.push(
+        new Swiper(el, {
           slidesPerView: 'auto',
           spaceBetween: 0,
           watchSlidesProgress: true,
           pagination: {
-            el: paginationEl,
+            el: el.querySelector('.swiper-pagination'),
             clickable: true
           }
         })
-
-        swiperInstances.push(instance)
-      })
-    }
-  } else {
-    if (swiperInstances.length > 0) {
-      swiperInstances.forEach((instance) => instance.destroy(true, true))
-      swiperInstances = []
-    }
+      )
+    })
+  } else if (!isMobile && swipers.length) {
+    swipers.forEach((swiper) => swiper.destroy(true, true))
+    swipers = []
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  initSwipers()
+// Кнопки «Показать все / Скрыть»
+function initExpandButtons() {
+  if (document.body.dataset.expandInitialized) return
+  document.body.dataset.expandInitialized = 'true'
 
-  const expandButtons = document.querySelectorAll('.expand__btn')
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.expand__btn')
+    if (!btn) return
 
-  expandButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const parentSection = btn.closest('.services__slide') || btn.parentElement
-      const slideList = btn.previousElementSibling
-      const btnText = btn.querySelector('.expand__btn-text')
+    const list = btn.previousElementSibling
 
-      if (slideList && slideList.classList.contains('slide__list')) {
-        slideList.classList.toggle('expanded')
-        btn.classList.toggle('expand__btn--active')
+    if (!list?.matches('.slide__list, .slide__list-others-wrapper')) return
 
-        if (slideList.classList.contains('expanded')) {
-          btnText.textContent = 'Скрыть'
-        } else {
-          btnText.textContent = 'Показать все'
-        }
-      }
-    })
+    const expanded = list.classList.toggle('expanded')
+    const text = btn.querySelector('.expand__btn-text')
+
+    if (text) {
+      text.textContent = expanded ? 'Скрыть' : 'Показать все'
+    }
   })
-})
+}
 
+// Бургер-меню
+function initMenu() {
+  const burger = document.getElementById('burger')
+  const menu = document.getElementById('menu')
+  const overlay = document.getElementById('overlay')
+
+  if (!burger || !menu || !overlay) return
+
+  const closeBtn = menu.querySelector('.menu__btn-close')
+
+  function toggleMenu(isOpen) {
+    menu.classList.toggle('menu--open', isOpen)
+    overlay.classList.toggle('overlay--open', isOpen)
+    document.body.style.overflow = isOpen ? 'hidden' : ''
+  }
+
+  burger.addEventListener('click', () => toggleMenu(true))
+  closeBtn?.addEventListener('click', () => toggleMenu(false))
+  overlay.addEventListener('click', () => toggleMenu(false))
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') toggleMenu(false)
+  })
+}
+
+// Запуск
+function initApp() {
+  initSwipers()
+  initExpandButtons()
+  initMenu()
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp)
+} else {
+  initApp()
+}
+
+// Пересоздание слайдеров при изменении ширины
 window.addEventListener('resize', () => {
   clearTimeout(resizeTimer)
   resizeTimer = setTimeout(initSwipers, 200)
 })
-
-// кнопка показать
-const expandBtn = document.querySelector('.expand__btn')
-const slideList = document.querySelector('.slide__list')
-const btnText = expandBtn.querySelector('.expand__btn-text')
-
-expandBtn.addEventListener('click', () => {
-  slideList.classList.toggle('expanded')
-
-  if (slideList.classList.contains('expanded')) {
-    btnText.textContent = 'Скрыть'
-  } else {
-    btnText.textContent = 'Показать все'
-  }
-})
-
-// бургер
-
-const burgerBtn = document.getElementById('burger');
-const menu = document.getElementById('menu');
-const closeBtn = menu.querySelector('.menu__btn-close');
-const overlay = document.getElementById('overlay');
-
-function openMenu() {
-  menu.classList.add('menu--open');
-  overlay.classList.add('overlay--open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeMenu() {
-  menu.classList.remove('menu--open');
-  overlay.classList.remove('overlay--open');
-  document.body.style.overflow = '';
-}
-
-burgerBtn.addEventListener('click', openMenu);
-closeBtn.addEventListener('click', closeMenu);
-overlay.addEventListener('click', closeMenu);
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && menu.classList.contains('menu--open')) {
-    closeMenu();
-  }
-});

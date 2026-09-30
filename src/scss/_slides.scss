@@ -46,7 +46,7 @@
                 width: 240px;
                 height: 160px;
                 margin-left: 16px;
-                background-color: #fff;
+                background-color: $bg-color;
                 border: 1px solid #eaeaea;
             }
         }
@@ -61,7 +61,7 @@
                 width: 260px;
                 height: 200px;
                 margin-left: 16px;
-                background-color: #fff;
+                background-color: $bg-color;
                 border: 1px solid #eaeaea;
             }
             .price__card {
@@ -92,7 +92,7 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                background-color: #fff;
+                background-color: $bg-color;
                 height: 72px;
                 width: 240px;
                 margin-left: 16px;
@@ -138,7 +138,7 @@
             right: 0;
             width: 120px;
             height: 32px;
-            color: #fff;
+            color: $bg-color;
             font-size: 14px;
             font-weight: 700;
             border-radius: 20px;
@@ -152,8 +152,8 @@
                 content: '';
                 width: 8px;
                 height: 8px;
-                border-top: 2px solid #fff;
-                border-right: 2px solid #fff;
+                border-top: 2px solid $bg-color;
+                border-right: 2px solid $bg-color;
                 transform: rotate(45deg);
                 margin-left: -3px;
             }
@@ -192,12 +192,12 @@
             margin-top: 25px;
             margin-left: auto;
             &-bullet {
-                background: #DDDDDD;
+                background: #dddddd;
                 opacity: 1;
                 width: 12px;
                 height: 12px;
                 &-active {
-                    background: #B5B6BC;
+                    background: #b5b6bc;
                 }
             }
         }
@@ -222,7 +222,7 @@
     
     &-text {
         display: block;
-        color: #1b1c21;
+        color: $font-color;
         font-size: 14px;
     }
     
@@ -263,6 +263,19 @@
                 transform: scale(1.15) rotate(45deg);
         }
         }
+    }
+}
+
+.slide__list-btns,
+.slide__list-btnsOthers,
+.slide__list-btnsPrice {
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+
+    &:hover,
+    &:focus,
+    &:active {
+        filter: brightness(92%);
+        transform: scale(1.09);
     }
 }
 

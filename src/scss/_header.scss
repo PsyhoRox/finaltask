@@ -5,7 +5,7 @@
   display: block;
   min-width: 120px;
   max-width: 100%;
-  background-color: #fff;
+  background-color: $bg-color;
 
   &__container {
     display: flex;
@@ -33,6 +33,14 @@
     background-repeat: no-repeat;
     background-color: $pink;
     cursor: pointer;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+
+    &:hover,
+    &:focus,
+    &:active {
+    filter: brightness(92%);
+    transform: scale(1.10);
+    }
 
     &-burger {
       background-image: url('../img/icon.svg');    
@@ -80,7 +88,7 @@
     &-tablet {
       display: none;
       height: 32px;
-      border-left: 2px solid #EAEAEA;
+      border-left: 2px solid #eaeaea;
       opacity: 0.4;
       flex-shrink: 0;
     }
