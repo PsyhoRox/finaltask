@@ -4,10 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>Услуги и сервисы</title>
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
-        <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-        <script src="./js/bundle.js"></script>
+        
+        <script src="./js/bundle.js" defer="defer"></script>
     <script defer="defer" src="./js/bundle.js"></script><link href="style.css" rel="stylesheet"></head>
     <body>
         
@@ -138,7 +138,7 @@
                     <p class="content__text">Мы являемся авторизованным
                         сервисным центром по ремонту техники Dell. Только у нас
                         вы можете отремонтировать свой ноутбук Dell с
-                        официальной гарантией производителя.</p> <p><br>Мы успешно работаем
+                        официальной гарантией производителя.Мы успешно работаем
                         с 1992 года и заслужили репутацию надежного партнера,
                         что подтверждает большое количество постоянных клиентов.
                         Мы гордимся тем, что к нам обращаются по рекомендациям
@@ -249,10 +249,6 @@
                             <p class="slide__list-text">Ремонт мониторов</p>
                             <a href="#" class="slide__list-btnsOthers"></a>
                         </li>
-                        <li class="slide__list-others swiper-slide">
-                            <p class="slide__list-text">Ремонт мониторов</p>
-                            <a href="#" class="slide__list-btnsOthers"></a>
-                        </li>
                     </ul>
                     <div class="swiper-pagination"></div>
                 </div>
@@ -260,116 +256,171 @@
                     <img src="img/expand.svg" alt="показать все" class="expand__btn-icon">
                     <span class="expand__btn-text">Показать все</span>
                 </button>
-                <div class="services__header">
-                    <p class="services__header-text">Ремонт различных видов
-                        техники</p>
-                </div>
-                <div class="slide__list swiper">
-                    <ul class="swiper-wrapper">
-                        <li class="slide__list-price swiper-slide">
-                            <div class="price__card">
-                                <span class="price__card-title">Ремонтные
-                                    услуги</span>
-                                <span class="price__card-text">Тестирование с
-                                    выдачей технического заключения</span>
+
+                <section class="price-section">
+                    <div class="services__header">
+                        <div class="services__header-text">
+                            ЦЕНЫ НА УСЛУГИ
+                        </div>
+                    </div>
+
+                    <div class="price-section__body">
+                        <div class="price-section__container">
+                            <div class="price__header">
+                                <span>Ремонтные услуги</span>
+                                <span>Цена</span>
+                                <span>Срок</span>
+                                <span></span>
                             </div>
-                            <div class="price__card">
-                                <span class="price__card-title">Цена</span>
-                                <span class="price__card-text">Бесплатно</span>
+
+                            <div class="slide__list swiper">
+                                <ul class="swiper-wrapper">
+
+                                    <li class="slide__list-price swiper-slide">
+                                        <div class="price__card">
+                                            <span class="price__card-title">
+                                                Ремонтные услуги
+                                            </span>
+                                            <span class="price__card-text">
+                                                Диагностика
+                                            </span>
+                                        </div>
+
+                                        <div class="price__card">
+                                            <span class="price__card-title">Цена</span>
+                                            <span class="price__card-text">Бесплатно</span>
+                                        </div>
+
+                                        <div class="price__card">
+                                            <span class="price__card-title">Срок</span>
+                                            <span class="price__card-text">30 мин</span>
+                                        </div>
+
+                                        <a href="#" class="slide__list-btnsPrice">
+                                            ЗАКАЗАТЬ
+                                        </a>
+                                    </li>
+
+                                    <li class="slide__list-price swiper-slide">
+                                        <div class="price__card">
+                                            <span class="price__card-title">
+                                                Ремонтные услуги
+                                            </span>
+                                            <span class="price__card-text">
+                                                Замена дисплея
+                                            </span>
+                                        </div>
+
+                                        <div class="price__card">
+                                            <span class="price__card-title">Цена</span>
+                                            <span class="price__card-text">1 000 ₽</span>
+                                        </div>
+
+                                        <div class="price__card">
+                                            <span class="price__card-title">Срок</span>
+                                            <span class="price__card-text">30-120 мин</span>
+                                        </div>
+
+                                        <a href="#" class="slide__list-btnsPrice">
+                                            ЗАКАЗАТЬ
+                                        </a>
+                                    </li>
+
+                                    <li class="slide__list-price swiper-slide">
+                                        <div class="price__card">
+                                            <span class="price__card-title">
+                                                Ремонтные услуги
+                                            </span>
+                                            <span class="price__card-text">
+                                                Замена полифонического динамика
+                                            </span>
+                                        </div>
+
+                                        <div class="price__card">
+                                            <span class="price__card-title">Цена</span>
+                                            <span class="price__card-text">1 000 ₽</span>
+                                        </div>
+
+                                        <div class="price__card">
+                                            <span class="price__card-title">Срок</span>
+                                            <span class="price__card-text">30-120 мин</span>
+                                        </div>
+
+                                        <a href="#" class="slide__list-btnsPrice">
+                                            ЗАКАЗАТЬ
+                                        </a>
+                                    </li>
+
+                                    <li class="slide__list-price swiper-slide">
+                                        <div class="price__card">
+                                            <span class="price__card-title">
+                                                Ремонтные услуги
+                                            </span>
+                                            <span class="price__card-text">
+                                                Тестирование с выдачей технического заключения
+                                            </span>
+                                        </div>
+
+                                        <div class="price__card">
+                                            <span class="price__card-title">Цена</span>
+                                            <span class="price__card-text">1 000 ₽</span>
+                                        </div>
+
+                                        <div class="price__card">
+                                            <span class="price__card-title">Срок</span>
+                                            <span class="price__card-text">30-120 мин</span>
+                                        </div>
+
+                                        <a href="#" class="slide__list-btnsPrice">
+                                            ЗАКАЗАТЬ
+                                        </a>
+                                    </li>
+
+                                    <li class="slide__list-price swiper-slide">
+                                        <div class="price__card">
+                                            <span class="price__card-title">
+                                                Ремонтные услуги
+                                            </span>
+                                            <span class="price__card-text">
+                                                Замена программного обеспечения
+                                            </span>
+                                        </div>
+
+                                        <div class="price__card">
+                                            <span class="price__card-title">Цена</span>
+                                            <span class="price__card-text">1 000 ₽</span>
+                                        </div>
+
+                                        <div class="price__card">
+                                            <span class="price__card-title">Срок</span>
+                                            <span class="price__card-text">30-120 мин</span>
+                                        </div>
+
+                                        <a href="#" class="slide__list-btnsPrice">
+                                            ЗАКАЗАТЬ
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <div class="swiper-pagination"></div>
                             </div>
-                            <div class="price__card">
-                                <span class="price__card-title">Срок</span>
-                                <span class="price__card-text">30-120 мин</span>
+
+                            <div class="price__others">
+                                <span class="price__others-text">Все цены указаны с учетом НДС. Стоимость ремонта указана на единичную услугу. Для получения коммерческого предложения на постоянное обслуживание, оставьте заявку.</span>
+                                <button class="price__others-btn">
+                                    Получить коммерческое предложение
+                                </button>
                             </div>
-                            <a href="#" class="slide__list-btnsPrice">Заказать</a>
-                        </li>
-                        <li class="slide__list-price swiper-slide">
-                            <div class="price__card">
-                                <span class="price__card-title">Ремонтные
-                                    услуги</span>
-                                <span class="price__card-text">Тестирование с
-                                    выдачей технического заключения</span>
-                            </div>
-                            <div class="price__card">
-                                <span class="price__card-title">Цена</span>
-                                <span class="price__card-text">Бесплатно</span>
-                            </div>
-                            <div class="price__card">
-                                <span class="price__card-title">Срок</span>
-                                <span class="price__card-text">30-120 мин</span>
-                            </div>
-                            <a href="#" class="slide__list-btnsPrice">Заказать</a>
-                        </li>
-                        <li class="slide__list-price swiper-slide">
-                            <div class="price__card">
-                                <span class="price__card-title">Ремонтные
-                                    услуги</span>
-                                <span class="price__card-text">Тестирование с
-                                    выдачей технического заключения</span>
-                            </div>
-                            <div class="price__card">
-                                <span class="price__card-title">Цена</span>
-                                <span class="price__card-text">Бесплатно</span>
-                            </div>
-                            <div class="price__card">
-                                <span class="price__card-title">Срок</span>
-                                <span class="price__card-text">30-120 мин</span>
-                            </div>
-                            <a href="#" class="slide__list-btnsPrice">Заказать</a>
-                        </li>
-                        <li class="slide__list-price swiper-slide">
-                            <div class="price__card">
-                                <span class="price__card-title">Ремонтные
-                                    услуги</span>
-                                <span class="price__card-text">Тестирование с
-                                    выдачей технического заключения</span>
-                            </div>
-                            <div class="price__card">
-                                <span class="price__card-title">Цена</span>
-                                <span class="price__card-text">Бесплатно</span>
-                            </div>
-                            <div class="price__card">
-                                <span class="price__card-title">Срок</span>
-                                <span class="price__card-text">30-120 мин</span>
-                            </div>
-                            <a href="#" class="slide__list-btnsPrice">Заказать</a>
-                        </li>
-                        <li class="slide__list-price swiper-slide">
-                            <div class="price__card">
-                                <span class="price__card-title">Ремонтные
-                                    услуги</span>
-                                <span class="price__card-text">Тестирование с
-                                    выдачей технического заключения</span>
-                            </div>
-                            <div class="price__card">
-                                <span class="price__card-title">Цена</span>
-                                <span class="price__card-text">Бесплатно</span>
-                            </div>
-                            <div class="price__card">
-                                <span class="price__card-title">Срок</span>
-                                <span class="price__card-text">30-120 мин</span>
-                            </div>
-                            <a href="#" class="slide__list-btnsPrice">Заказать</a>
-                        </li>
-                    </ul>
-                    <div class="swiper-pagination"></div>
-                </div>
-                <div class="price__others">
-                    <span class="price__others-text">Все цены указаны с учетом НДС. Стоимость ремонта указана на единичную услугу. Для получения коммерческого предложения на постоянное обслуживание, оставьте заявку.</span>
-                    <button class="price__others-btn">
-                        Получить коммерческое предложение
-                    </button>
-                </div>
-            </div>
-            <footer class="footer">
-                <p class="footer__text">&copy; 2019 CPS<br>Разработано командой Apesong</p>
-                <p class="footer__text">
-                    <a href="#" class="footer__link">Политика конфиденциальности</a>
-                </p>
-                <p class="footer__text footer__text">
-                    Информация, размещенная на данной странице, не является публичной офертой
-                </p>
-            </footer>
-        </main>
-    </body>
-</html>
+                        </div>
+                        <footer class="footer">
+                            <span class="footer__text">&copy; 2019 CPS<br>Разработано командой Apesong</span>
+                            <span class="footer__text">
+                                <a href="#" class="footer__link">Политика конфиденциальности</a>
+                            </span>
+                            <span class="footer__text footer__text">
+                                Информация, размещенная на данной странице,<br> не является публичной офертой
+                            </span>
+                        </footer>
+                    </div></section></div></main>
+                </body>
+            </html>
