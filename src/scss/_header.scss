@@ -42,29 +42,29 @@
     transform: scale(1.10);
     }
 
-    &-burger {
+    &--burger {
       background-image: url('../img/icon.svg');    
     }
 
-    &-repair {
+    &--repair {
       background-image: url('../img/repair.svg');
     }
 
-    &-status {
+    &--status {
       background-image: url(../img/status.svg);
     }
 
-    &-call {
+    &--call {
       background-image: url(../img/call.svg);
       display: none;  
     }
 
-    &-write {
+    &--write {
       background-image: url(../img/write.svg);
       display: none; 
     }
 
-    &-profile {
+    &--profile {
       background-image: url(../img/profile.svg);
       display: none; 
     }
@@ -85,7 +85,7 @@
     opacity: 0.4;
     flex-shrink: 0;
 
-    &-tablet {
+    &--tablet {
       display: none;
       height: 32px;
       border-left: 2px solid #eaeaea;

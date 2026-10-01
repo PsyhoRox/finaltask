@@ -95,7 +95,7 @@ body  {
         border: none;
         cursor: pointer;
 
-        &-active {
+        &--active {
             border-radius: 6px;
             outline: 2px solid #b8ffec;
         }
@@ -284,10 +284,10 @@ body  {
         display: none;
     }
 
-    .header__btn-call,
-    .header__btn-write,
-    .header__btn-profile,
-    .header__line-tablet {
+    .header__btn--call,
+    .header__btn--write,
+    .header__btn--profile,
+    .header__line--tablet {
         display: block;
     }
 

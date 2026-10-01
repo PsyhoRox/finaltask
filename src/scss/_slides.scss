@@ -38,6 +38,30 @@
         }
 // разное ремонты
         &-others {
+            .slide__list-btns {
+                display: flex;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: 2px solid $pink;
+                align-items: center;
+                justify-content: center;
+                margin: 16px;
+
+                &::after {
+                    content: '';
+                    width: 8px;
+                    height: 8px;
+                    border-top: 2px solid $pink;
+                    border-right: 2px solid $pink;
+                    transform: rotate(45deg);
+                    margin-left: -3px;
+                }
+            
+            }
             &.swiper-slide {
                 display: flex;
                 gap: 16px;
@@ -52,6 +76,33 @@
         }
 // прайс заказы
         &-price {
+            .slide__list-btns {
+                display: flex;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 120px;
+                height: 32px;
+                color: $bg-color;
+                font-size: 14px;
+                font-weight: 700;
+                border-radius: 20px;
+                background-color: $pink;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                margin: 16px;
+
+                &::after {
+                    content: '';
+                    width: 8px;
+                    height: 8px;
+                    border-top: 2px solid $bg-color;
+                    border-right: 2px solid $bg-color;
+                    transform: rotate(45deg);
+                    margin-left: -3px;
+                }
+            }
             &.swiper-slide {
                 display: flex;
                 flex-direction: column;
@@ -119,58 +170,6 @@
             justify-content: center;
             flex-shrink: 0;
             margin: 0;
-
-            &::after {
-                content: '';
-                width: 8px;
-                height: 8px;
-                border-top: 2px solid $pink;
-                border-right: 2px solid $pink;
-                transform: rotate(45deg);
-                margin-left: -3px;
-            }
-        }
-
-        &-btnsPrice {
-            display: flex;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 120px;
-            height: 32px;
-            color: $bg-color;
-            font-size: 14px;
-            font-weight: 700;
-            border-radius: 20px;
-            background-color: $pink;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin: 16px;
-
-            &::after {
-                content: '';
-                width: 8px;
-                height: 8px;
-                border-top: 2px solid $bg-color;
-                border-right: 2px solid $bg-color;
-                transform: rotate(45deg);
-                margin-left: -3px;
-            }
-        }
-
-        &-btnsOthers {
-            display: flex;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 2px solid $pink;
-            align-items: center;
-            justify-content: center;
-            margin: 16px;
 
             &::after {
                 content: '';
@@ -266,15 +265,13 @@
     }
 }
 
-.slide__list-btns,
-.slide__list-btnsOthers,
-.slide__list-btnsPrice {
+.slide__list-btns {
     transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 
     &:hover,
     &:focus,
     &:active {
-        filter: brightness(92%);
+        filter: brightness(98%);
         transform: scale(1.09);
     }
 }

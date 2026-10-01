@@ -67,24 +67,24 @@
             transform: scale(1.10);
         }
 
-        &-close {
+        &--close {
             background-image: url(../img/close.svg);
         }
 
-        &-search {
+        &--search {
             background-image: url(../img/search.svg);
             margin-left: auto;
         }
 
-        &-call {
+        &--call {
             background-image: url(../img/call.svg);
         }
 
-        &-write {
+        &--write {
             background-image: url(../img/write.svg);
         }
 
-        &-profile {
+        &--profile {
             background-image: url(../img/profile.svg);
         }
     }
@@ -131,7 +131,7 @@
         text-align: left;
         padding: 0;
 
-        &-focus {
+        &--focus {
             color: #7e7e82;
 
             &::before {
@@ -168,7 +168,7 @@
             font-size: 16px;
         }
 
-        &-phone-bold {
+        &-phone {
             font-weight: 900;
             font-size: 24px;
         }
@@ -188,7 +188,7 @@
             background-color: transparent;
             padding: 0;
 
-            &-focus {
+            &--focus {
                 color: #7e7e82;
             }
         }

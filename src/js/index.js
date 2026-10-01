@@ -2,7 +2,6 @@ import '../scss/style.scss'
 import Swiper from 'swiper/bundle'
 
 let swipers = []
-let resizeTimer
 
 // Слайдеры: только на мобильных
 function initSwipers() {
@@ -88,9 +87,3 @@ if (document.readyState === 'loading') {
 } else {
   initApp()
 }
-
-// Пересоздание слайдеров при изменении ширины
-window.addEventListener('resize', () => {
-  clearTimeout(resizeTimer)
-  resizeTimer = setTimeout(initSwipers, 200)
-})
